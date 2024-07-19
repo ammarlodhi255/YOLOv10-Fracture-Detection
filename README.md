@@ -57,68 +57,30 @@ If you find our paper useful in your research, please consider citing:
                ├── images
                │    ├── train
                │    │    ├── train_img1.png
+               │    │    ├── train_img2.png
                │    │    └── ...
-               │    ├── valid
-               │    │    ├── valid_img1.png
+               │    ├── val
+               │    │    ├── val_img1.png
+               │    │    ├── val_img2.png
                │    │    └── ...
                │    └── test
                │         ├── test_img1.png
+               │         ├── test_img2.png
                │         └── ...
                └── labels
                     ├── train
                     │    ├── train_annotation1.txt
+                    │    ├── train_annotation2.txt
                     │    └── ...
-                    ├── valid
-                    │    ├── valid_annotation1.txt
-                    │    └── ...
-                    └── test
-                         ├── test_annotation1.txt
-                         └── ...
-
-
-The script will create 3 files: `train_data.csv`, `valid_data.csv`, and `test_data.csv` with the same structure of `dataset.csv`.
-
-## Data Augmentation
-* Data augmentation of the training set using the addWeighted function doubles the size of the training set.
-```
-  python imgaug.py --input_img /path/to/input/train/ --output_img /path/to/output/train/ --input_label /path/to/input/labels/ --output_label /path/to/output/labels/
-```
-For example:
-```
-  python imgaug.py --input_img ./GRAZPEDWRI-DX/data/images/train/ --output_img ./GRAZPEDWRI-DX/data/images/train_aug/ --input_label ./GRAZPEDWRI-DX/data/labels/train/ --output_label ./GRAZPEDWRI-DX/data/labels/train_aug/
-```
-
-* The path of the processed file is shown below:
-
-       GRAZPEDWRI-DX_dataset
-          └── data   
-               ├── images
-               │    ├── train
-               │    │    ├── train_img1.png
-               │    │    └── ...
-               │    ├── train_aug
-               │    │    ├── train_aug_img1.png
-               │    │    └── ...
-               │    ├── valid
-               │    │    ├── valid_img1.png
-               │    │    └── ...
-               │    └── test
-               │         ├── test_img1.png
-               │         └── ...
-               └── labels
-                    ├── train
-                    │    ├── train_annotation1.txt
-                    │    └── ...
-                    ├── train_aug
-                    │    ├── train_aug_annotation1.txt
-                    │    └── ...
-                    ├── valid
-                    │    ├── valid_annotation1.txt
+                    ├── val
+                    │    ├── val_annotation1.txt
+                    │    ├── val_annotation2.txt
                     │    └── ...
                     └── test
                          ├── test_annotation1.txt
+                         ├── test_annotation2.txt
                          └── ...
-                         
+
 ## Weights
 If you plan to use pretrained models to train, you need put them into `./weights/`.
 * You can get the YOLOv9 pretained models on the MS COCO 2017 Dataset through [YOLOv9 official GitHub](https://github.com/WongKinYiu/yolov9).

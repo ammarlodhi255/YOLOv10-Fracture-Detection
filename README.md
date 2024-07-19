@@ -1,8 +1,7 @@
 # YOLOv9 for Fracture Detection
 
->[YOLOv9 for Fracture Detection in Pediatric Wrist Trauma X-ray Images](https://arxiv.org/abs/2403.11249)
+>[YOLOv10 for Automated Wrist Fracture Detection in Pediatric Trauma X-Rays ](https://arxiv.org/????)
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolov9-for-fracture-detection-in-pediatric/object-detection-on-grazpedwri-dx)](https://paperswithcode.com/sota/object-detection-on-grazpedwri-dx?p=yolov9-for-fracture-detection-in-pediatric)
 
 ## Comparison
 <p align="left">
@@ -24,15 +23,7 @@
 ## Citation
 If you find our paper useful in your research, please consider citing:
 
-    @article{chien2024yolov9,
-      title={YOLOv9 for fracture detection in pediatric wrist trauma X-ray images},
-      author={Chien, Chun-Tse and Ju, Rui-Yang and Chou, Kuang-Yi and Chiang, Jen-Shiun},
-      journal={Electronics Letters},
-      volume={60},
-      number={11},
-      pages={e13248},
-      year={2024},
-      publisher={Wiley Online Library}
+    @article{
     }
     
 ## Requirements

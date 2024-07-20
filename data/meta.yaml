@@ -9,7 +9,7 @@ names:
 - softtissue
 - text
 nc: 9
-path: ../Dataset/folder_structure/yolov5/images
-train: ../Dataset/folder_structure/yolov5/images/train
-val: ../Dataset/folder_structure/yolov5/images/valid
-test: ../Dataset/folder_structure/yolov5/images/test
+path: data/GRAZPEDWRI-DX/data/images
+train: data/GRAZPEDWRI-DX/data/images/train
+val: data/GRAZPEDWRI-DX/data/images/valid
+test: data/GRAZPEDWRI-DX/data/images/test

@@ -1,6 +1,6 @@
-# YOLOv9 for Fracture Detection
+# YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-Rays
 
->[YOLOv10 for Automated Wrist Fracture Detection in Pediatric Trauma X-Rays ](https://arxiv.org/????)
+>[YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-Rays ](https://arxiv.org/????)
 
 
 ## Comparison

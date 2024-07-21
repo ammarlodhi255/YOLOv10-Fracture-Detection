@@ -2,12 +2,8 @@
 
 > [YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-Rays ](https://arxiv.org/????)
 
-<!-- ## Comparison
-<p align="left">
-  <img src="img/figure_comparison.jpg" width="480" title="details">
-</p> -->
 
-## Performance
+## Performance Comparison YOLOv9 vs YOLOv10
 
 |  Variant  | mAP@50 (%) | mAP@50-95 (%) | F1 (%) | Params (M) | FLOPs (G) |
 | :-------: | :--------: | :-----------: | :----: | :--------: | :-------: |

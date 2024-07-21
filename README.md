@@ -41,19 +41,27 @@ If you find our paper useful in your research, please consider citing:
   pip install -r requirements.txt
 ```
 
-## Overall Flowchart
+## Overall Model Architecture
 
 <p align="left">
-  <img src="img/figure_flowchart.jpg" width="1024" title="details">
+  <img src="img/YOLOv10(architecture).png" width="1024" title="details">
 </p>
 
 ## Dataset Split
 
 - GRAZPEDWRI-DX Dataset [(Download Link)](https://figshare.com/articles/dataset/GRAZPEDWRI-DX/14825193)
+
 - Download dataset and put images and annotatation into `./GRAZPEDWRI-DX_dataset/data/images`, `./GRAZPEDWRI-DX_dataset/data/labels`.
+
+- Since the authors of the dataset did not provide a split, we
+  randomly partitioned the dataset into a training set of 15,245
+  images (75%), a validation set of 4,066 images (20%), and a
+  testing set of 1,016 images (5%).
+
   ```
     python split.py
   ```
+
 - The dataset is divided into training, validation, and testing set (75-20-5%).
 - The script then will move the files into the relative folder as it is represented here below.
 
@@ -86,7 +94,7 @@ If you find our paper useful in your research, please consider citing:
                          ├── test_annotation2.txt
                          └── ...
 
-## Weights
+<!-- ## Weights
 
 If you plan to use pretrained models to train, you need put them into `./weights/`.
 
@@ -95,7 +103,7 @@ If you plan to use pretrained models to train, you need put them into `./weights
 
 ```
   gdown https://github.com/RuiyangJu/YOLOv9-Fracture-Detection/releases/download/Trained/weights.zip
-```
+``` -->
 
 ## Train & Validate
 
@@ -104,11 +112,21 @@ Before training the model, make sure the path to the data in the `./data/meta.ya
 - meta.yaml
 
 ```
-  # patch: /path/to/GRAZPEDWRI-DX/data
-  path: 'E:/GRAZPEDWRI-DX/data'
-  train: 'images/train_aug'
-  val: 'images/valid'
-  test: 'images/test'
+names:
+- boneanomaly
+- bonelesion
+- foreignbody
+- fracture
+- metal
+- periostealreaction
+- pronatorsign
+- softtissue
+- text
+nc: 9
+path: data/GRAZPEDWRI-DX/data/images
+train: data/GRAZPEDWRI-DX/data/images/train
+val: data/GRAZPEDWRI-DX/data/images/valid
+test: data/GRAZPEDWRI-DX/data/images/test
 ```
 
 - Arguments
@@ -117,11 +135,11 @@ Before training the model, make sure the path to the data in the `./data/meta.ya
 | :-----: | :-----------------------------: | :---------------------------------------------------------: |
 | workers |                8                | number of worker threads for data loading (per RANK if DDP) |
 | device  |              None               |     device to run on, i.e. device=0,1,2,3 or device=cpu     |
-|  model  |              None               |      path to model file, i.e. yolov8n.pt, yolov8n.yaml      |
-|  batch  |               16                |        number of images per batch (-1 for AutoBatch)        |
+|  model  |              None               |     path to model file, i.e. yolov10n.pt, yolov10n.yaml     |
+|  batch  |               32                |        number of images per batch (-1 for AutoBatch)        |
 |  data   |              None               |            path to data file, i.e. coco128.yaml             |
 |   img   |               640               |       size of input images as integer, i.e. 640, 1024       |
-|   cfg   |            yolo.yaml            |           path to model.yaml, i.e. yolov9-c.yaml            |
+|   cfg   |            yolo.yaml            |           path to model.yaml, i.e. yolov10n.yaml            |
 | weights |              None               |                    initial weights path                     |
 |  name   |               exp               |                    save to project/name                     |
 |   hyp   | data/hyps/hyp.scratch-high.yaml |                    hyperparameters path                     |
@@ -130,15 +148,17 @@ Before training the model, make sure the path to the data in the `./data/meta.ya
 - Example
 
 ```
-  python train_dual.py --workers 8 --device 0 --batch 16 --data data/meta.yaml --img 640 --cfg models/detect/yolov9-c.yaml --weights weights/yolov9-c.pt --name yolov9-c --hyp hyp.scratch-high.yaml --min-items 0 --epochs 100 --close-mosaic 15
+  from ultralytics import YOLO
+
+  model = YOLO("yolov10x.pt")
+
+  results=model.train(data='dataset/meta.yaml', epochs=100, imgsz=640, batch=32, name='x', resume=True)
+
 ```
 
 ## Related Works
 
 <details><summary> <b>Expand</b> </summary>
 
-- [https://github.com/RuiyangJu/Bone_Fracture_Detection_YOLOv8](https://github.com/RuiyangJu/Bone_Fracture_Detection_YOLOv8)
-- [https://github.com/RuiyangJu/Fracture_Detection_Improved_YOLOv8](https://github.com/RuiyangJu/Fracture_Detection_Improved_YOLOv8)
-- [https://github.com/RuiyangJu/YOLOv8_Global_Context_Fracture_Detection](https://github.com/RuiyangJu/YOLOv8_Global_Context_Fracture_Detection)
-
+- [https://github.com/RuiyangJu/YOLOv9-Fracture-Detection](https://github.com/RuiyangJu/YOLOv9-Fracture-Detection)
 </details>

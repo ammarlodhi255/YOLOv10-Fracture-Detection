@@ -131,15 +131,14 @@ test: data/GRAZPEDWRI-DX/data/images/test
 |   Key   |              Value              |                         Description                         |
 | :-----: | :-----------------------------: | :---------------------------------------------------------: |
 | workers |                8                | number of worker threads for data loading (per RANK if DDP) |
-| device  |              None               |     device to run on, i.e. device=0,1,2,3 or device=cpu     |
+| device  |                  0              |     device to run on, i.e. device=0,1,2,3 or device=cpu     |
 |  model  |              None               |     path to model file, i.e. yolov10n.pt, yolov10n.yaml     |
 |  batch  |               32                |        number of images per batch (-1 for AutoBatch)        |
-|  data   |              None               |            path to data file, i.e. coco128.yaml             |
+|  data   |         data.yaml               |            path to data file, i.e. coco128.yaml             |
 |   img   |               640               |       size of input images as integer, i.e. 640, 1024       |
 |   cfg   |            yolo.yaml            |           path to model.yaml, i.e. yolov10n.yaml            |
 | weights |              None               |                    initial weights path                     |
 |  name   |               exp               |                    save to project/name                     |
-|   hyp   | data/hyps/hyp.scratch-high.yaml |                    hyperparameters path                     |
 | epochs  |               100               |                number of epochs to train for                |
 
 - Example
@@ -149,13 +148,6 @@ test: data/GRAZPEDWRI-DX/data/images/test
 
   model = YOLO("yolov10x.pt")
 
-  results=model.train(data='dataset/meta.yaml', epochs=100, imgsz=640, batch=32, name='x', resume=True)
+  results=model.train(data='dataset/meta.yaml', epochs=100, imgsz=640, batch=32, name='x')
 
 ```
-
-## Related Works
-
-<details><summary> <b>Expand</b> </summary>
-
-- [https://github.com/RuiyangJu/YOLOv9-Fracture-Detection](https://github.com/RuiyangJu/YOLOv9-Fracture-Detection)
-</details>

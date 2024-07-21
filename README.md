@@ -31,8 +31,8 @@ If you find our paper useful in your research, please consider citing:
 ## Requirements
 
 - Linux (Ubuntu)
-- Python = 3.9
-- Pytorch = 1.13.1
+- Python = 3.12
+- Pytorch = 2.3
 - NVIDIA GPU + CUDA CuDNN
 
 ## Environment

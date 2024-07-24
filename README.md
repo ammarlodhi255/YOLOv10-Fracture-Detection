@@ -3,6 +3,11 @@
 > [YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-Rays ](https://arxiv.org/????)
 
 
+	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolov10-for-automated-fracture-detection-in/fracture-detection-on-grazpedwri-dx)](https://paperswithcode.com/sota/fracture-detection-on-grazpedwri-dx?p=yolov10-for-automated-fracture-detection-in)
+	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolov10-for-automated-fracture-detection-in/object-detection-on-grazpedwri-dx)](https://paperswithcode.com/sota/object-detection-on-grazpedwri-dx?p=yolov10-for-automated-fracture-detection-in)
+
 ## Performance Comparison YOLOv9 vs YOLOv10
 
 |  Variant  | mAP@50 (%) | mAP@50-95 (%) | F1 (%) | Params (M) | FLOPs (G) |

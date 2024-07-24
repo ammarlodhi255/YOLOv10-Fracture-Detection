@@ -2,10 +2,6 @@
 
 > [YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-Rays ](https://arxiv.org/????)
 
-	
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolov10-for-automated-fracture-detection-in/fracture-detection-on-grazpedwri-dx)](https://paperswithcode.com/sota/fracture-detection-on-grazpedwri-dx?p=yolov10-for-automated-fracture-detection-in)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolov10-for-automated-fracture-detection-in/object-detection-on-grazpedwri-dx)](https://paperswithcode.com/sota/object-detection-on-grazpedwri-dx?p=yolov10-for-automated-fracture-detection-in)
 
 ## Performance Comparison YOLOv9 vs YOLOv10
 
@@ -25,10 +21,16 @@
 
 If you find our paper useful in your research, please consider citing:
 
-    @article{
+    @misc{yolov10_fracture,
+      title={YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-rays},
+      author={Ammar Ahmed and Abdul Manaf},
+      year={2024},
+      eprint={2407.15689},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV},
+      url={https://arxiv.org/abs/2407.15689},
 
-      
-    }
+}
 
 ## Requirements
 
@@ -98,11 +100,10 @@ If you find our paper useful in your research, please consider citing:
 
 ## Weights
 
-You can download the trained weights of YOLOv10 and YOLOv9 on the GRAZPEDWRI-DX dataset from the following link and use them directly in your 
+You can download the trained weights of YOLOv10 and YOLOv9 on the GRAZPEDWRI-DX dataset from the following link and use them directly in your
 applications.
 
 - Weights [(Download Link)](https://figshare.com/articles/online_resource/Weights/26343553)
-
 
 ## Train & Validate
 
@@ -130,18 +131,18 @@ test: data/GRAZPEDWRI-DX/data/images/test
 
 - Arguments
 
-|   Key   |              Value              |                         Description                         |
-| :-----: | :-----------------------------: | :---------------------------------------------------------: |
-| workers |                8                | number of worker threads for data loading (per RANK if DDP) |
-| device  |                  0              |     device to run on, i.e. device=0,1,2,3 or device=cpu     |
-|  model  |              None               |     path to model file, i.e. yolov10n.pt, yolov10n.yaml     |
-|  batch  |               32                |        number of images per batch (-1 for AutoBatch)        |
-|  data   |         data.yaml               |            path to data file, i.e. coco128.yaml             |
-|   img   |               640               |       size of input images as integer, i.e. 640, 1024       |
-|   cfg   |            yolo.yaml            |           path to model.yaml, i.e. yolov10n.yaml            |
-| weights |              None               |                    initial weights path                     |
-|  name   |               exp               |                    save to project/name                     |
-| epochs  |               100               |                number of epochs to train for                |
+|   Key   |   Value   |                         Description                         |
+| :-----: | :-------: | :---------------------------------------------------------: |
+| workers |     8     | number of worker threads for data loading (per RANK if DDP) |
+| device  |     0     |     device to run on, i.e. device=0,1,2,3 or device=cpu     |
+|  model  |   None    |     path to model file, i.e. yolov10n.pt, yolov10n.yaml     |
+|  batch  |    32     |        number of images per batch (-1 for AutoBatch)        |
+|  data   | data.yaml |            path to data file, i.e. coco128.yaml             |
+|   img   |    640    |       size of input images as integer, i.e. 640, 1024       |
+|   cfg   | yolo.yaml |           path to model.yaml, i.e. yolov10n.yaml            |
+| weights |   None    |                    initial weights path                     |
+|  name   |    exp    |                    save to project/name                     |
+| epochs  |    100    |                number of epochs to train for                |
 
 - Example
 

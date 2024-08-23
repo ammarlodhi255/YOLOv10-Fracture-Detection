@@ -142,12 +142,15 @@ test: data/GRAZPEDWRI-DX/data/images/test
   from ultralytics import YOLO
 
   model = YOLO("yolov10x.pt")
-```​⬤
+  results=model.train(data='dataset/meta.yaml', epochs=100, imgsz=640, batch=32, name='x')
+
+```
 
 ## Citation
 
 If you find our paper useful in your research, please consider citing:
 
+```
    @article{ahmed2024pediatric,
 	  title     = {Pediatric Wrist Fracture Detection in X-rays via YOLOv10 Algorithm and Dual Label Assignment System},
 	  author    = {Ahmed, Ammar and Manaf, Abdul},
@@ -159,7 +162,5 @@ If you find our paper useful in your research, please consider citing:
 	  doi       = {10.48550/arXiv.2407.15689}
 }
 
-
-  results=model.train(data='dataset/meta.yaml', epochs=100, imgsz=640, batch=32, name='x')
-
 ```
+

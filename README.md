@@ -148,16 +148,17 @@ test: data/GRAZPEDWRI-DX/data/images/test
 
 If you find our paper useful in your research, please consider citing:
 
-    @misc{yolov10_fracture,
-      title={YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-rays},
-      author={Ammar Ahmed and Abdul Manaf},
-      year={2024},
-      eprint={2407.15689},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV},
-      url={https://arxiv.org/abs/2407.15689},
-
+   @article{ahmed2024pediatric,
+	  title     = {Pediatric Wrist Fracture Detection in X-rays via YOLOv10 Algorithm and Dual Label Assignment System},
+	  author    = {Ahmed, Ammar and Manaf, Abdul},
+	  year      = {2024},
+	  journal   = {arXiv},
+	  eprint    = {2407.15689},
+	  note      = {arXiv:2407.15689},
+	  url       = {https://doi.org/10.48550/arXiv.2407.15689},
+	  doi       = {10.48550/arXiv.2407.15689}
 }
+```​⬤
 
   results=model.train(data='dataset/meta.yaml', epochs=100, imgsz=640, batch=32, name='x')
 

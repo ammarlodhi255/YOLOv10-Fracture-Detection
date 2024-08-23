@@ -1,12 +1,18 @@
-# YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-Rays
+# Pediatric Wrist Fracture Detection in X-rays via YOLOv10 Algorithm and Dual Label Assignment System
 
-> [YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-Rays ](https://arxiv.org/????)
-
-
-	
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolov10-for-automated-fracture-detection-in/fracture-detection-on-grazpedwri-dx)](https://paperswithcode.com/sota/fracture-detection-on-grazpedwri-dx?p=yolov10-for-automated-fracture-detection-in)
 	
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolov10-for-automated-fracture-detection-in/object-detection-on-grazpedwri-dx)](https://paperswithcode.com/sota/object-detection-on-grazpedwri-dx?p=yolov10-for-automated-fracture-detection-in)
+
+Paper URL: [Pediatric Wrist Fracture Detection in X-rays via YOLOv10 Algorithm and Dual Label Assignment System](arxiv.org/abs/2407.15689)
+
+Wrist fractures are highly prevalent among children and can significantly impact their daily activities, such as attending school, participating in sports, and performing basic self-care tasks. If not treated properly, these fractures can result in chronic pain, reduced wrist functionality, and other long-term complications. Recently, advancements in object detection have shown promise in enhancing fracture detection, with systems achieving accuracy comparable to, or even surpassing, that of human radiologists. The YOLO series, in particular, has demonstrated notable success in this domain. This study is the first to provide a thorough evaluation of various YOLOv10 variants to assess their performance in detecting pediatric wrist fractures using the GRAZPEDWRI-DX dataset. It investigates how changes in model complexity, scaling the architecture, and implementing a dual-label assignment strategy can enhance detection performance. Experimental results indicate that our trained model achieved mean average precision (mAP@50-95) of 51.9% surpassing the current YOLOv9 benchmark of 43.3% on this dataset. This represents an improvement of 8.6%.
+
+## Overall Model Architecture
+<p align="left">
+  <img src="img/YOLOv10(architecture).png" width="1024" title="details">
+</p>
+
 
 ## Performance Comparison YOLOv9 vs YOLOv10
 
@@ -22,20 +28,7 @@
 | YOLOv10-L |    70.9    |     46.6      |  68.7  |    25.7    |   126.4   |
 | YOLOv10-X |    76.2    |     48.2      |  69.8  |    31.6    |   169.9   |
 
-## Citation
 
-If you find our paper useful in your research, please consider citing:
-
-    @misc{yolov10_fracture,
-      title={YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-rays},
-      author={Ammar Ahmed and Abdul Manaf},
-      year={2024},
-      eprint={2407.15689},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV},
-      url={https://arxiv.org/abs/2407.15689},
-
-}
 
 ## Requirements
 
@@ -49,12 +42,6 @@ If you find our paper useful in your research, please consider citing:
 ```
   pip install -r requirements.txt
 ```
-
-## Overall Model Architecture
-
-<p align="left">
-  <img src="img/YOLOv10(architecture).png" width="1024" title="details">
-</p>
 
 ## Dataset Split
 
@@ -155,6 +142,22 @@ test: data/GRAZPEDWRI-DX/data/images/test
   from ultralytics import YOLO
 
   model = YOLO("yolov10x.pt")
+
+
+## Citation
+
+If you find our paper useful in your research, please consider citing:
+
+    @misc{yolov10_fracture,
+      title={YOLOv10 for Automated Fracture Detection in Pediatric Wrist Trauma X-rays},
+      author={Ammar Ahmed and Abdul Manaf},
+      year={2024},
+      eprint={2407.15689},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV},
+      url={https://arxiv.org/abs/2407.15689},
+
+}
 
   results=model.train(data='dataset/meta.yaml', epochs=100, imgsz=640, batch=32, name='x')
 
